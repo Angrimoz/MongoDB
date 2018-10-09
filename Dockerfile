@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
-ADD requirements.txt /
-RUN pip install -r requirements.txt
+RUN apt-get update 
+RUN apt-get install -y mongodb-org
 RUN mkdir -p /data/db
 EXPOSE 27017
 CMD service mongod start
