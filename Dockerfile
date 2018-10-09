@@ -22,9 +22,9 @@ EXPOSE 27017
 # Set /usr/bin/mongod as the dockerized entry-point application
 ENTRYPOINT ["/usr/bin/mongod"]
 
-RUN localhost/MyDB
-RUN --bind_ip 0.0.0.0
-RUN db.createUser(
+CMD localhost/MyDB
+CMD --bind_ip 0.0.0.0
+CMD db.createUser(
    {
      user: "MongoUser",
      pwd: "Omgmapa",
