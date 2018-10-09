@@ -10,7 +10,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75
 RUN echo "deb http://repo.mongodb.org/apt/ubuntu $(cat /etc/lsb-release | grep DISTRIB_CODENAME | cut -d= -f2)/mongodb-org/4.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 
 # Update apt-get sources AND install MongoDB
-RUN apt-get update && apt-get install -y mongodb-org
+RUN apt-get install -y mongodb-org
 
 # Create the MongoDB data directory
 RUN mkdir -p /data/db
@@ -23,5 +23,4 @@ ENTRYPOINT ["/usr/bin/mongod"]
 
 # Set start Mongo services
 CMD service mongod start
-RUN -d -p 27017:27017 -v ~/data:/data/db mongo
 CMD mongo localhost/mydb
