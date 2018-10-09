@@ -1,5 +1,4 @@
-# Update apt-get sources AND install MongoDB
-RUN apt-get update 
+# install MongoDB
 RUN apt-get install -y mongodb-org
 
 # Create the MongoDB data directory
