@@ -1,3 +1,4 @@
+FROM ubuntu:16.04
 ADD requirements.txt /
 RUN pip install -r requirements.txt
 RUN mkdir -p /data/db
