@@ -1,6 +1,6 @@
 # install MongoDB
-RUN apt-get install -y mongodb-org
-
+ADD requirements.txt /
+RUN pip install -r requirements.txt
 # Create the MongoDB data directory
 RUN mkdir -p /data/db
 
