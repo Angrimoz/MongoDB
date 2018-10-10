@@ -21,7 +21,3 @@ EXPOSE 27017
 
 # Set /usr/bin/mongod as the dockerized entry-point application
 ENTRYPOINT ["/usr/bin/mongod"]
-
-# Create the user
-RUN mongo admin
-RUN db.createUser({user: "MongoUser", pwd: "Omgmapa", roles:["dbAdmin"]})
