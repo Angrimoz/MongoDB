@@ -23,6 +23,5 @@ EXPOSE 27017
 ENTRYPOINT ["/usr/bin/mongod"]
 
 # Create the user
-RUN mongo
-RUN use admin
+RUN mongo admin
 RUN db.createUser({user: "MongoUser", pwd: "Omgmapa", roles:["dbAdmin"]})
