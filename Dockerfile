@@ -21,3 +21,8 @@ EXPOSE 27017
 
 # Set /usr/bin/mongod as the dockerized entry-point application
 ENTRYPOINT ["/usr/bin/mongod"]
+
+# Set start Mongo services
+CMD service mongod start
+RUN -d -p 27017:27017 -v ~/data:/data/db mongo
+CMD mongo localhost/mydb
