@@ -25,6 +25,14 @@ ENTRYPOINT ["/usr/bin/mongod"]
 # Set start Mongo services
 CMD service mongod start
 
+use Admin
+db.createUser(
+   {
+     user: "MongoUser",
+     pwd: "Omgmapa",
+     roles: [ "readWrite", "dbAdmin" ]
+   }
+)
 # Create User
 # docker run -d --name some-mongo -e MONGO_INITDB_ROOT_USERNAME=MongoUser -e MONGO_INITDB_ROOT_PASSWORD=Omgmapa -e MONGO_INITDB_DATABASE=admin mongo
 # CMD mongo
