@@ -23,9 +23,9 @@ EXPOSE 27017
 ENTRYPOINT ["/usr/bin/mongod"]
 
 # Set start Mongo services
-CMD service mongod start
+# CMD service mongod start
 
 # Create User
-CMD use admin
-CMD db.createUser({user: "MongoUser", pwd: "Omgmapa", roles:["dbAdmin"]})
-CMD db.auth ("MongoUser" , "Omgmapa" )
+# CMD use admin
+# CMD db.createUser({user: "MongoUser", pwd: "Omgmapa", roles:["dbAdmin"]})
+# CMD db.auth ("MongoUser" , "Omgmapa" )
