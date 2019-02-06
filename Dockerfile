@@ -26,7 +26,8 @@ ENTRYPOINT ["/usr/bin/mongod"]
 CMD service mongod start
 
 # Create User
-CMD mongo
-CMD use admin
-CMD db.createUser({user: "MongoUser", pwd: "Omgmapa", roles:["dbAdmin"]})
+RUN -d --name some-mongo -e MONGO_INITDB_ROOT_USERNAME=MongoUser -e MONGO_INITDB_ROOT_PASSWORD=Omgmapa -e MONGO_INITDB_DATABASE=admin mongo
+# CMD mongo
+# CMD use admin
+# CMD db.createUser({user: "MongoUser", pwd: "Omgmapa", roles:["dbAdmin"]})
 # CMD db.auth ("MongoUser" , "Omgmapa" )
